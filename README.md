@@ -11,8 +11,10 @@ Please see the [Reach GitHub](https://github.com/clulab/reach.git) for informati
 
 Run any of the examples with `sbt run` or `sbt run-main`:
 
+```
   > sbt 'run-main com.yourorg.TextInJsonOutJava'
+```
 
 Because Reach loads and uses several large NLP data models, we recommend that you allocate a sufficient amount of working memory for the process. We have observed no issues running with at least 5 gigabytes of heap:
 
-  `-server -Xms3g -Xmx6g`
+  `JAVA_OPTS=-server -Xms3g -Xmx6g`
