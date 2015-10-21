@@ -13,6 +13,6 @@ Run any of the examples with `sbt run` or `sbt run-main`:
 
   > sbt 'run-main com.yourorg.TextInJsonOutJava'
 
-Because Reach loads a large set of NLP data models, we recommend that you allocate a sufficient amount of working memory for the process. We have had good luck with at least 5 gigabytes of heap:
+Because Reach loads and uses several large NLP data models, we recommend that you allocate a sufficient amount of working memory for the process. We have observed no issues running with at least 5 gigabytes of heap:
 
-  `-server -Xms1024m -Xmx6144m`
+  `-server -Xms3g -Xmx6g`
