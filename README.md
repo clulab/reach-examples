@@ -1,0 +1,16 @@
+# Reach Examples
+
+This project provides some examples of how to interface with the CLULab Reach system in both Scala and Java.
+
+Please see the [Reach GitHub](https://github.com/clulab/reach.git) for information on Reach itself.
+
+## What you'll need...
+  1. [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
+  2. [sbt](http://www.scala-sbt.org/release/tutorial/Setup.html)
+  3. [`reach`](https://github.com/clulab/reach.git).
+
+Run any of the examples with `sbt run` or `sbt run-main`:
+
+  > sbt 'run-main com.yourorg.TextInJsonOutJava'
+
+Because Reach loads a large set of data models, we recommend that you allocate a sufficient amount of working memory for the process. We have had good luck with at least 5 gigabytes of heap: `-server -Xms1024m -Xmx6144m`.
