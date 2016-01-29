@@ -8,7 +8,7 @@ import edu.arizona.sista.reach.grounding._
 /**
  * Lookup grounding information for each string in a list of strings.
  * Author: Tom Hicks. 12/13/2015.
- * Last Modified: Update to optionally read model or use strings from standard input.
+ * Last Modified: Update for grounding changes.
  */
 object GroundStrings extends App {
 
@@ -29,9 +29,9 @@ object GroundStrings extends App {
       of KB namespace and reference ID, if a KB entry with the given key was found. */
   def resolveString (aString: String): Option[Tuple2[String, String]] = {
     searchSequence.foreach { kbLookup =>     // for each KB in the sequence
-      val refID = kbLookup.resolve(aString)  // lookup the given string key
-      if (!refID.isEmpty)                    // if an entry with that key is found in a KB
-        return Some(Tuple2(kbLookup.namespace, refID.get)) // then return KB namespace and ID value
+      val res = kbLookup.resolve(aString)    // lookup the given string key
+      if (res.isDefined)                     // if an entry with that key is found in a KB
+        return Some(Tuple2(res.get.metaInfo.namespace, res.get.id)) // then return KB namespace and ID
     }
     return None                             // else signal failure to find key string in any KB
   }
